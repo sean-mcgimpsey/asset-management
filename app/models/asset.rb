@@ -11,4 +11,6 @@ class Asset < ActiveRecord::Base
   validates :manufactuer, presence: true, length: {minimum: 3, maximum: 50}
   validates :location_region, presence: true, length: {minimum: 3, maximum: 50}
   validates :location_site, presence: true, length: {minimum: 3, maximum: 50}
+
+  default_scope { order('asset_tag ASC')}
 end
