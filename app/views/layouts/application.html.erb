@@ -11,12 +11,12 @@
   body { background: #007acc, color: white;  } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
 </style>
 <%= render 'layouts/navigation' %>
+<%= render 'layouts/messages' %>
 <div class="container">
 
   <%= yield %>
 </div>
 <%= render 'layouts/footer' %>
-<%= render 'layouts/messages' %>
 </body>
 </html>
 </html>

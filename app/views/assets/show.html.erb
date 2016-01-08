@@ -1,39 +1,46 @@
-<p id="notice"><%= notice %></p>
+<h2 align="center">Asset: <%= @asset.asset_tag %></h2>
+<div class="well col-xs-8 col-xs-offset-2">
+  <h4 class="center details"><strong>Details:</strong></h4>
+  <hr>
+  <p>
+    <strong>Asset tag:</strong>
+    <%= @asset.asset_tag %>
+  </p>
 
-<p>
-  <strong>Asset tag:</strong>
-  <%= @asset.asset_tag %>
-</p>
+  <p>
+    <strong>Manufactuer:</strong>
+    <%= @asset.manufactuer %>
+  </p>
 
-<p>
-  <strong>Manufactuer:</strong>
-  <%= @asset.manufactuer %>
-</p>
+  <p>
+    <strong>Model:</strong>
+    <%= @asset.model %>
+  </p>
 
-<p>
-  <strong>Model:</strong>
-  <%= @asset.model %>
-</p>
+  <p>
+    <strong>Location region:</strong>
+    <%= @asset.location_region %>
+  </p>
 
-<p>
-  <strong>Location region:</strong>
-  <%= @asset.location_region %>
-</p>
+  <p>
+    <strong>Location site:</strong>
+    <%= @asset.location_site %>
+  </p>
 
-<p>
-  <strong>Location site:</strong>
-  <%= @asset.location_site %>
-</p>
+  <p>
+    <strong>Assignee:</strong>
+    <%= @asset.assignee %>
+  </p>
 
-<p>
-  <strong>Assignee:</strong>
-  <%= @asset.assignee %>
-</p>
-
-<p>
-  <strong>Active:</strong>
-  <%= @asset.active %>
-</p>
-
-<%= link_to 'Edit', edit_asset_path(@asset) %> |
-<%= link_to 'Back', assets_path %>
+  <p>
+    <strong>Active:</strong>
+    <%= @asset.active %>
+  </p>
+  <div class="asset-actions">
+    <%= link_to "Edit this asset", edit_asset_path(@asset), class: "btn btn-xs btn-primary" %>
+    <%= link_to "Delete this asset", asset_path(@asset), method: :delete,
+                data: { confirm: "Are you sure you want to delete the asset?"},
+                class: "btn btn-xs btn-danger" %>
+    <%= link_to "View all assets", assets_path, class: "btn btn-xs btn-success" %>
+  </div>
+</div>

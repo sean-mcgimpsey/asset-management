@@ -1,50 +1,71 @@
-<%= form_for(@asset) do |f| %>
-  <% if @asset.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@asset.errors.count, "error") %> prohibited this asset from being saved:</h2>
-
-      <ul>
-      <% @asset.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= render 'shared/errors', obj: @asset %>
+<div class='row'>
+  <div class='col-xs-12'>
+    <%= form_for(@asset, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :asset_tag %>
+          </div>
+          <div class="col-sm-2">
+            <%= f.text_field :asset_tag, class: "form-control", placeholder: "Asset Number", autofocus: true %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :Type %>
+          </div>
+          <div class="col-sm-2">
+            <%= f.select :typeofasset, ['Laptop', 'Server', 'Monitor', 'IT Appliance', 'Misc'] %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :Manufactuer %>
+          </div>
+          <div class="col-sm-3">
+            <%= f.text_field :manufactuer, rows: 10, class: "form-control", placeholder: "eg, Dell, Lenovo" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :Model %>
+          </div>
+          <div class="col-sm-3">
+            <%= f.text_field :model, rows: 10, class: "form-control", placeholder: "Model" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :Region %>
+          </div>
+          <div class="col-sm-3">
+            <%= f.select :location_region, ['EMEA', 'APAC', 'AMER']%>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :Site %>
+          </div>
+          <div class="col-sm-3">
+            <%= f.select :location_site, ['ADV', 'AMS', 'BUD', 'MAN', 'NBY', 'RNC', 'SNG'] %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :assignee %>
+          </div>
+          <div class="col-sm-3">
+            <%= f.text_field :assignee, rows: 10, class: "form-control", placeholder: "Assignee" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <%= f.submit class: 'btn btn-primary btn-lg' %>
+          </div>
+        </div>
+    <% end %>
+    <div class="col-xs-4 col-xs-offset-4">
+      [ <%= link_to "Cancel request and return to articles listing", assets_path %> ]
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :asset_tag %><br>
-    <%= f.number_field :asset_tag %>
   </div>
-  <div class="field">
-    <%= f.label :manufactuer %><br>
-    <%= f.text_field :manufactuer %>
-  </div>
-    <div class="field">
-      <%= f.label :Type %><br>
-      <%= f.text_field :typeofasset %>
-    </div>
-
-  <div class="field">
-    <%= f.label :model %><br>
-    <%= f.text_field :model %>
-  </div>
-  <div class="field">
-    <%= f.label :location_region %><br>
-    <%= f.text_field :location_region %>
-  </div>
-  <div class="field">
-    <%= f.label :location_site %><br>
-    <%= f.text_field :location_site %>
-  </div>
-  <div class="field">
-    <%= f.label :assignee %><br>
-    <%= f.text_field :assignee %>
-  </div>
-  <div class="field">
-    <%= f.label :active %><br>
-    <%= f.check_box :active %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
