@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asset_tag: 1
+  type: 
+  manufactuer: MyString
+  model: MyString
+  location_region: MyString
+  location_site: MyString
+  assignee: MyString
+  active: false
+
+two:
+  asset_tag: 1
+  type: 
+  manufactuer: MyString
+  model: MyString
+  location_region: MyString
+  location_site: MyString
+  assignee: MyString
+  active: false

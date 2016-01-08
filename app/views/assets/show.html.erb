@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Asset tag:</strong>
+  <%= @asset.asset_tag %>
+</p>
+
+<p>
+  <strong>Manufactuer:</strong>
+  <%= @asset.manufactuer %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @asset.model %>
+</p>
+
+<p>
+  <strong>Location region:</strong>
+  <%= @asset.location_region %>
+</p>
+
+<p>
+  <strong>Location site:</strong>
+  <%= @asset.location_site %>
+</p>
+
+<p>
+  <strong>Assignee:</strong>
+  <%= @asset.assignee %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @asset.active %>
+</p>
+
+<%= link_to 'Edit', edit_asset_path(@asset) %> |
+<%= link_to 'Back', assets_path %>

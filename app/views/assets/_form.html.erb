@@ -1,0 +1,50 @@
+<%= form_for(@asset) do |f| %>
+  <% if @asset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@asset.errors.count, "error") %> prohibited this asset from being saved:</h2>
+
+      <ul>
+      <% @asset.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :asset_tag %><br>
+    <%= f.number_field :asset_tag %>
+  </div>
+  <div class="field">
+    <%= f.label :manufactuer %><br>
+    <%= f.text_field :manufactuer %>
+  </div>
+    <div class="field">
+      <%= f.label :Type %><br>
+      <%= f.text_field :typeofasset %>
+    </div>
+
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :location_region %><br>
+    <%= f.text_field :location_region %>
+  </div>
+  <div class="field">
+    <%= f.label :location_site %><br>
+    <%= f.text_field :location_site %>
+  </div>
+  <div class="field">
+    <%= f.label :assignee %><br>
+    <%= f.text_field :assignee %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br>
+    <%= f.check_box :active %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
