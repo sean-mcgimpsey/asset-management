@@ -4,11 +4,13 @@
   <thead>
     <tr>
       <th>Asset tag</th>
+      <th>Purchase Date</th>
       <th>Type</th>
       <th>Manufactuer</th>
       <th>Model</th>
       <th>Location region</th>
       <th>Location site</th>
+      <th>Hostname</th>
       <th>Assignee</th>
       <th>Active</th>
       <th colspan="3"></th>
@@ -19,11 +21,13 @@
     <% @assets.each do |asset| %>
       <tr>
         <td><%= asset.asset_tag %></td>
+        <td><%= asset.purchasedate %></td>
         <td><%= asset.typeofasset %></td>
         <td><%= asset.manufactuer %></td>
         <td><%= asset.model %></td>
         <td><%= asset.location_region %></td>
         <td><%= asset.location_site %></td>
+        <td><%= asset.hostname %></td>
         <td><%= asset.assignee %></td>
         <td><%= asset.active %></td>
         <td><%= link_to 'Show', asset %></td>

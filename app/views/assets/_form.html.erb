@@ -12,6 +12,14 @@
         </div>
         <div class="form-group">
           <div class="control-label col-sm-2">
+            <%= f.label :purchasedate %>
+          </div>
+          <div class="col-sm-2">
+            <%= f.text_field :purchasedate, class: "form-control", placeholder: "Purchase Date", autofocus: true %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
             <%= f.label :Type %>
           </div>
           <div class="col-sm-2">
@@ -48,6 +56,14 @@
           </div>
           <div class="col-sm-3">
             <%= f.select :location_site, ['ADV', 'AMS', 'BUD', 'MAN', 'NBY', 'RNC', 'SNG'] %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :hostname %>
+          </div>
+          <div class="col-sm-3">
+            <%= f.text_field :hostname, rows: 10, class: "form-control", placeholder: "Hostname" %>
           </div>
         </div>
         <div class="form-group">
