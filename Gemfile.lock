@@ -1,4 +1,4 @@
-GEM
+git GEM
   remote: https://rubygems.org/
   specs:
     actionmailer (4.1.8)
@@ -129,4 +129,4 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
