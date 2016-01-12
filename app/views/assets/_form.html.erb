@@ -15,7 +15,7 @@
             <%= f.label :purchasedate %>
           </div>
           <div class="col-sm-2">
-            <%= f.text_field :purchasedate, class: "form-control", placeholder: "Purchase Date", autofocus: true %>
+            <%= f.text_field :purchasedate, :class => 'datepicker'%>
           </div>
         </div>
         <div class="form-group">
@@ -81,7 +81,7 @@
         </div>
     <% end %>
     <div class="col-xs-4 col-xs-offset-4">
-      [ <%= link_to "Cancel request and return to articles listing", assets_path %> ]
+      [ <%= link_to "Cancel and return to asset register", assets_path %> ]
     </div>
   </div>
 </div>

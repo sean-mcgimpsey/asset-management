@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160109131711) do
+ActiveRecord::Schema.define(version: 20160112100729) do
 
   create_table "assets", force: true do |t|
     t.integer  "asset_tag"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 20160109131711) do
     t.string   "typeofasset"
     t.string   "hostname"
     t.date     "purchasedate"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
