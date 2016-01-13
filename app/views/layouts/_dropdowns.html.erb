@@ -1,0 +1,16 @@
+<div class="btn-group pull-right toggleCheck" style="display:none;" id='<%= id %>'>
+  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><%= title %><span class="caret"></span></a>
+  <ul class="dropdown-menu" style="right: 0; left: auto;">
+    <% if type == :search %>
+        <li style="padding:5px 10px;"><input class="drop-search focus-open hold" type='text' placeholder='Search' style="margin:0px;"></li>
+    <% elsif type == :note %>
+        <li style="padding:5px 10px;"><textarea placeholder='Status notes' class="hold focus-open note-box" rows="4" style="margin:0px; resize: none;"></textarea></li>
+    <% end %>
+    <li style="padding:5px 10px; font-weight:700;"><%= subtitle %></li>
+    <div class="choices">
+      <% collection.each do |c| %>
+          <li><%= link_to (label.(c) + '<span class="comment"></span>').html_safe, '#', :value => value.(c), :path => path, :iden => label.(c).downcase.gsub(/\s/, '-') %></li>
+      <% end %>
+    </div>
+  </ul>
+</div>
